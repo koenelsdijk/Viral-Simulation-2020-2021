@@ -1,0 +1,2 @@
+-I/projects/Viral-Simulation-2020-2021/libraries
+-xc++
