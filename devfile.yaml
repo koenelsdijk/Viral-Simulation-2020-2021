@@ -1,0 +1,55 @@
+apiVersion: 1.0.0
+metadata:
+  name: cpp-viralsim
+attributes:
+  persistVolumes: 'false'
+projects:
+  - name: Viral-Simulation-2020-2021
+    source:
+      location: 'https://github.com/wbrinksma/Viral-Simulation-2020-2021.git'
+      type: git
+      branch: main
+components:
+  - mountSources: true
+    endpoints:
+      - attributes:
+          public: 'true'
+          protocol: http
+          discoverable: 'false'
+        name: web
+        port: 8000
+    command:
+      - sleep
+      - infinity
+    memoryLimit: 512Mi
+    type: dockerimage
+    image: emscripten/emsdk
+    alias: cpp-dev
+  - id: eclipse-cdt/cdt-vscode/latest
+    type: chePlugin
+    alias: cpp-plugin
+commands:
+  - name: run-production
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/Viral-Simulation-2020-2021'
+        type: exec
+        command: make run-production
+        component: cpp-dev
+  - name: run-debug
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/Viral-Simulation-2020-2021'
+        type: exec
+        command: make run-debug
+        component: cpp-dev
+  - name: build-production
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/Viral-Simulation-2020-2021'
+        type: exec
+        command: make build-production
+        component: cpp-dev
+  - name: build-debug
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}/Viral-Simulation-2020-2021'
+        type: exec
+        command: make build-debug
+        component: cpp-dev
