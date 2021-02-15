@@ -32,7 +32,17 @@ Simulate a situation in which subjects can get better again after a certain peri
 
 This assignment has to be completed individually and will be graded digitally. To aid in this process, you will not just upload the source code. Instead, you are required to clone this GitHub repository into your own account, modify it as needed for completing the assignment and committing these changes to your repository, and handing in the link to that repository. This allows us to review your commit history which gives us a good indication of your development process. The location for handing in the link to your repository, as well as the rubric used for grading the assignment, will be communicated with you through your academic email.
 
-To start this project, you will need a few dependencies installed on your system:
+To start this project, two options are available. It can be installed on a local system, but it is also available on OpenShift.io (a cloud IDE).
+
+1. OpenShift.io
+OpenShift.io is a free service which let's you develop in a remote Linux environment for free (certain quota apply). To start with OpenShift.io, you need an account with the service. This can be made through [OpenShift.io](https://openshift.io/), by clicking on **SIGN UP**. It is advised to use your GitHub account, because the standard RedHat account does not provide facilities for 2-factor authentication.
+
+When signed up, your account will be provisioned to receive a free workspace. This workspace has to be configured before it can be used. A number of templates are available, but we will be using a custom configuration file. In the workspaces tab, click on *Add Workspace*. In the following form, you will see a text box showing *URL or devfile*. In this text box, you can paste the following URL: https://raw.githubusercontent.com/wbrinksma/Viral-Simulation-2020-2021/main/devfile.yaml. Then, click on *Load devfile*. This will load the specified configuration from this repository. Once done, scroll to the bottom of the page and click **Create & Open**. This will start the workspace and configure it accordingly. You will be presented with the code and a familiar development environment. To run the code, click on the tab *Terminal* and then *Run Task...*. Choose *run-production* from the dropdown menu, and the build and run process will commence. This will run a small server on port 8000, which is exposed in your configuration. The development environment will detect this, and display a message in the bottom right corner to ask if you want to view the content from the started server. Opening it in a new window will use a pop-up, which can be blocked by your browser. Opening it in preview will show a small screen next to the editor which will preview your application. To close the application, you can click the terminal the *run-production* is running in (bottom of the page) and press ctrl-c. This will stop the server by making the process exit.
+
+Below, you will find some resources important to the project.
+
+2. Local installation
+To start this project on a local machine, you will need a few dependencies installed on your system:
 
 - Git
 - Python3
