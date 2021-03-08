@@ -1,8 +1,6 @@
 apiVersion: 1.0.0
 metadata:
   name: cpp-viralsim
-attributes:
-  persistVolumes: 'false'
 projects:
   - name: Viral-Simulation-2020-2021
     source:
@@ -10,6 +8,12 @@ projects:
       type: git
       branch: main
 components:
+  - id: che-incubator/cpptools/latest
+    preferences:
+      clangd.path: /usr/bin/clangd
+      cdt.clangd.binaries.enable: false
+    type: chePlugin
+    alias: cpp-plugin
   - mountSources: true
     endpoints:
       - attributes:
@@ -23,11 +27,8 @@ components:
       - infinity
     memoryLimit: 512Mi
     type: dockerimage
-    image: emscripten/emsdk
     alias: cpp-dev
-  - id: eclipse-cdt/cdt-vscode/latest
-    type: chePlugin
-    alias: cpp-plugin
+    image: emscripten/emsdk
 commands:
   - name: run-production
     actions:
