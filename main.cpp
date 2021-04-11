@@ -46,6 +46,16 @@ int main() {
         
         corsim::Subject su(x,y,SUBJECT_RADIUS,false);
 
+        corsim::MovementStrategy *strategy;
+
+        if (i % 4 == 3) {
+            strategy = new corsim::LockdownMovementStrategy();
+        }
+        else {
+            strategy = new corsim::RegularMovementStrategy();
+        }
+        
+        su.set_movementStrategy(*strategy);
         su.set_dx(dist_dx(mt));
         su.set_dy(dist_dy(mt));
 

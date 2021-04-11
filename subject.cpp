@@ -50,22 +50,22 @@ void Subject::set_y(double y)
 
 double Subject::dx()
 {
-    return this->_dx;
+    return this->_movementStrategy->get_dx();
 }
 
 double Subject::dy()
 {
-    return this->_dy;
+    return this->_movementStrategy->get_dy();
 }
 
 void Subject::set_dx(double dx)
 {
-    this->_dx = dx;
+    this->_movementStrategy->set_dx(dx);
 }
 
 void Subject::set_dy(double dy)
 {
-    this->_dy = dy;
+    this->_movementStrategy->set_dy(dy);
 }
 
 int Subject::radius()
@@ -85,12 +85,12 @@ void Subject::infect()
 
 double Subject::angle()
 {
-    return atan2(_dy,_dx);
+    return atan2(dy(),dx());
 }
 
 double Subject::speed()
 {
-    return sqrt(_dx * _dx + _dy * _dy);
+    return sqrt(dx() * dx() + dy() * dy());
 }
 
 }

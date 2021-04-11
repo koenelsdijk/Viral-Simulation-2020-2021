@@ -27,8 +27,33 @@ class MovementStrategy
         virtual ~MovementStrategy(){}
         virtual double get_dx() = 0;
         virtual double get_dy() = 0;
-        virtual void set_dx() = 0;
-        virtual void set_dy() = 0;
+        virtual void set_dx(double dx) = 0;
+        virtual void set_dy(double dy) = 0;
+};
+
+
+class RegularMovementStrategy : public MovementStrategy
+{
+    public:
+        RegularMovementStrategy(){}
+        ~RegularMovementStrategy(){}
+        double get_dx();
+        double get_dy();
+        void set_dx(double dx);
+        void set_dy(double dy);
+    private:
+        double _dx = 0, _dy = 0;
+};
+
+class LockdownMovementStrategy : public MovementStrategy
+{
+    public:
+        LockdownMovementStrategy(){}
+        ~LockdownMovementStrategy(){}
+        double get_dx();
+        double get_dy();
+        void set_dx(double dx);
+        void set_dy(double dy);
     private:
         double _dx = 0, _dy = 0;
 };

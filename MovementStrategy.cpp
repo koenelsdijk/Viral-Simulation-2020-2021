@@ -18,14 +18,16 @@
 
 namespace corsim {
 
+double RegularMovementStrategy::get_dx(){return _dx;}
+double RegularMovementStrategy::get_dy(){return _dy;}
 
-class RegularmovementStrategy : public MovementStrategy
-{
-    private:
-        double _dx;
-        double _dy;
-    public:
-        
-};
+void RegularMovementStrategy::set_dx(double dx){_dx = dx;}
+void RegularMovementStrategy::set_dy(double dy){_dy = dy;}
 
+
+double LockdownMovementStrategy::get_dx(){return _dx;}
+double LockdownMovementStrategy::get_dy(){return _dy;}
+
+void LockdownMovementStrategy::set_dx(double dx){_dx = 0;}
+void LockdownMovementStrategy::set_dy(double dy){_dy = 0;}
 }
