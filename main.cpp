@@ -20,6 +20,7 @@
 #include <math.h>
 #include "html_canvas.h"
 #include "ChartJS_handler.h"
+#include "MovementStrategy.h"
 
 //Constants to control the simulation
 const int SUBJECT_COUNT = 200;
@@ -44,18 +45,17 @@ int main() {
         double x = dist_w(mt); //Randomly generate x position
         double y = dist_h(mt); //Randomly generate y position
         
-        corsim::Subject su(x,y,SUBJECT_RADIUS,false);
-
-        corsim::MovementStrategy *strategy;
-
+        corsim::MovementStrategy strategy;
         if (i % 4 == 3) {
             strategy = new corsim::LockdownMovementStrategy();
         }
         else {
             strategy = new corsim::RegularMovementStrategy();
         }
+
+        corsim::Subject su(x,y,SUBJECT_RADIUS,false, *strategy);
+
         
-        su.set_movementStrategy(*strategy);
         su.set_dx(dist_dx(mt));
         su.set_dy(dist_dy(mt));
 
