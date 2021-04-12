@@ -45,7 +45,7 @@ int main() {
         double x = dist_w(mt); //Randomly generate x position
         double y = dist_h(mt); //Randomly generate y position
         
-        corsim::MovementStrategy strategy;
+        corsim::MovementStrategy *strategy = new corsim::LockdownMovementStrategy();
         if (i % 4 == 3) {
             strategy = new corsim::LockdownMovementStrategy();
         }

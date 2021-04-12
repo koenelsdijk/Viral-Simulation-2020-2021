@@ -26,7 +26,7 @@ namespace corsim
 class Subject
 {
     public:
-        Subject(int x, int y, int radius, bool infected, MovementStrategy strategy);
+        Subject(int x, int y, int radius, bool infected, MovementStrategy& strategy);
         double x();
         double y();
         void set_x(double x);

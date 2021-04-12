@@ -20,7 +20,7 @@
 namespace corsim
 {
 
-Subject::Subject(int x, int y, int radius, bool infected, MovementStrategy strategy)
+Subject::Subject(int x, int y, int radius, bool infected, MovementStrategy& strategy)
 {
     this->_x = x;
     this->_y = y;

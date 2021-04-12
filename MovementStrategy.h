@@ -18,6 +18,9 @@
 
 namespace corsim {
 
+
+
+
 /*
  * Interface for the strategies that define horizontal and 
  * vertical movement of a corsim::Subject
