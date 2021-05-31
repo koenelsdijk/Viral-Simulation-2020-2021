@@ -32,9 +32,9 @@ copydeps:
 	@echo Copying dependencies done.
 
 run-debug: debug-build
-	@echo "Staring test server with debug ready code... (you can stop the server by pressing ctrl+C)"
+	@echo "Starting test server with debug ready code... (you can stop the server by pressing ctrl+C)"
 	@cd $(OUTPUT_PATH) && python3 -m http.server
 
 run-production: prod-build
-	@echo "Staring test server with production code... (you can stop the server by pressing ctrl+C)"
+	@echo "Starting test server with production code... (you can stop the server by pressing ctrl+C)"
 	@cd $(OUTPUT_PATH) && python3 -m http.server
