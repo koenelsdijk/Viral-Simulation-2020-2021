@@ -6,6 +6,8 @@ namespace ViralSimulation.SeleniumTests
 {
     public class Class1
     {
+
+
         [Test]
         public void PassTheTest()
         {
@@ -13,9 +15,9 @@ namespace ViralSimulation.SeleniumTests
         }
 
         [Test]
-        public void FailTheTest()
+        public void PassTheTestAgain()
         {
-            Assert.True(false);
+            Assert.True(true);
         }
     }
 }
